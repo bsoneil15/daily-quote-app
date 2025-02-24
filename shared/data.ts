@@ -3,21 +3,45 @@ import type { InsertAuthor, InsertQuote } from "./schema";
 export const authors: InsertAuthor[] = [
   {
     id: 1,
-    name: "Eleanor Roosevelt",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/2/22/Eleanor_Roosevelt_portrait_1933.jpg",
-    bio: "Former First Lady, diplomat and activist"
+    name: "Napoleon Bonaparte",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/5/50/Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg",
+    bio: "French military commander and emperor"
   },
   {
     id: 2,
+    name: "Seneca",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/1/12/Seneca.JPG",
+    bio: "Roman Stoic philosopher and statesman"
+  },
+  {
+    id: 3,
+    name: "Plato",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/8/88/Plato_Silanion_Musei_Capitolini_MC1377.jpg",
+    bio: "Classical Greek philosopher"
+  },
+  {
+    id: 4,
     name: "Marie Curie",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Marie_Curie_c1920.png",
     bio: "Nobel Prize-winning physicist and chemist"
   },
   {
-    id: 3,
-    name: "Maya Angelou",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/8/8d/Maya_Angelou_2.jpg",
-    bio: "Poet, memoirist, and civil rights activist"
+    id: 5,
+    name: "Ernest Shackleton",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Shackleton_in_1909.jpg/800px-Shackleton_in_1909.jpg",
+    bio: "Antarctic explorer and exemplary leader"
+  },
+  {
+    id: 6,
+    name: "Teddy Roosevelt",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/6/64/President_Theodore_Roosevelt%2C_1904.jpg",
+    bio: "26th President of the United States and conservationist"
+  },
+  {
+    id: 7,
+    name: "Marcus Aurelius",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Marcus_Aurelius_Glyptothek_Munich.jpg",
+    bio: "Roman Emperor and Stoic philosopher"
   }
 ];
 
@@ -26,57 +50,81 @@ export const quotes: InsertQuote[] = [
   {
     id: 1,
     authorId: 1,
-    text: "No one can make you feel inferior without your consent.",
+    text: "A leader is a dealer in hope.",
     theme: "leadership"
   },
   {
     id: 2,
     authorId: 2,
-    text: "Nothing in life is to be feared, it is only to be understood.",
+    text: "A great leader never sets out to be a leader. He sets out to make a difference.",
     theme: "leadership"
   },
   {
     id: 3,
     authorId: 3,
-    text: "Nothing will work unless you do.",
+    text: "The measure of a man is what he does with power.",
+    theme: "leadership"
+  },
+  {
+    id: 4,
+    authorId: 4,
+    text: "Nothing in life is to be feared; it is only to be understood.",
+    theme: "leadership"
+  },
+  {
+    id: 5,
+    authorId: 5,
+    text: "Difficulties are just things to overcome, after all.",
     theme: "leadership"
   },
   // Focus quotes
   {
-    id: 4,
-    authorId: 1,
-    text: "Great minds discuss ideas; average minds discuss events; small minds discuss people.",
-    theme: "focus"
-  },
-  {
-    id: 5,
-    authorId: 2,
-    text: "One never notices what has been done; one can only see what remains to be done.",
-    theme: "focus"
-  },
-  {
     id: 6,
+    authorId: 1,
+    text: "Take time to deliberate, but when the time for action comes, stop thinking and go in.",
+    theme: "focus"
+  },
+  {
+    id: 7,
+    authorId: 2,
+    text: "He who is everywhere is nowhere.",
+    theme: "focus"
+  },
+  {
+    id: 8,
     authorId: 3,
-    text: "Success is liking yourself, liking what you do, and liking how you do it.",
+    text: "Better a little which is well done, than a great deal imperfectly.",
+    theme: "focus"
+  },
+  {
+    id: 9,
+    authorId: 7,
+    text: "Concentrate every minute on doing what's in front of you with precise and genuine seriousness.",
     theme: "focus"
   },
   // Growth quotes
   {
-    id: 7,
+    id: 10,
     authorId: 1,
-    text: "You gain strength, courage, and confidence by every experience in which you really stop to look fear in the face.",
+    text: "Impossible is a word to be found only in the dictionary of fools.",
     theme: "growth"
   },
   {
-    id: 8,
+    id: 11,
     authorId: 2,
-    text: "Life is not easy for any of us. But what of that? We must have perseverance and above all confidence in ourselves.",
+    text: "It is not because things are difficult that we do not dare; it is because we do not dare that they are difficult.",
     theme: "growth"
   },
   {
-    id: 9,
-    authorId: 3,
-    text: "You can't really know where you are going until you know where you have been.",
+    id: 12,
+    authorId: 6,
+    text: "Do what you can, with what you have, where you are.",
+    theme: "growth"
+  },
+  {
+    id: 13,
+    authorId: 7,
+    text: "The happiness of your life depends upon the quality of your thoughts.",
     theme: "growth"
   }
 ];
