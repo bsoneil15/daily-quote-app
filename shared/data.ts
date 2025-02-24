@@ -166,9 +166,9 @@ export const quotes: InsertQuote[] = [
 ];
 
 export const themeBackgrounds = {
-  leadership: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
-  focus: "https://images.unsplash.com/photo-1489533119213-66a5cd877091",
-  growth: "https://images.unsplash.com/photo-1470115636492-6d2b56f9146d"
+  leadership: "https://images.unsplash.com/photo-1507842217343-583bb7270b66", // Library with books
+  focus: "https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5", // Misty forest 
+  growth: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e" // Sunlight through trees
 };
 
 export const themeColors = {

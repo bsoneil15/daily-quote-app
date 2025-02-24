@@ -15,7 +15,6 @@ interface QuoteCardProps {
 
 export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
   const colors = themeColors[theme];
-  const [imageError, setImageError] = useState(false);
 
   const generateQuoteImage = async () => {
     const canvas = document.createElement('canvas');
@@ -100,20 +99,6 @@ export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
     <Card className="backdrop-blur-sm bg-white/90 max-w-2xl mx-auto shadow-lg">
       <CardContent className="p-4 sm:p-6">
         <div className="flex flex-col md:flex-row gap-4 sm:gap-6">
-          <div className="flex-shrink-0 mx-auto md:mx-0">
-            {!imageError ? (
-              <img
-                src={author.imageUrl}
-                alt={author.name}
-                className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-4 border-white shadow-md"
-                onError={() => setImageError(true)}
-              />
-            ) : (
-              <div className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center ${colors.primary} text-white text-xl sm:text-2xl font-bold`}>
-                {author.name.charAt(0)}
-              </div>
-            )}
-          </div>
           <div className="flex-1">
             <blockquote className={`text-lg sm:text-xl md:text-2xl font-serif mb-3 sm:mb-4 ${colors.text} leading-relaxed text-center md:text-left`}>
               "{quote.text}"
