@@ -1,39 +1,49 @@
-import { users, type User, type InsertUser } from "@shared/schema";
-
-// modify the interface with any CRUD methods
-// you might need
+import { quotes, authors, type Author, type InsertAuthor, type Quote, type InsertQuote, type DailyQuote } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
-  getUser(id: number): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  getDailyQuote(theme: string): Promise<DailyQuote | undefined>;
+  createAuthor(author: InsertAuthor): Promise<Author>;
+  createQuote(quote: InsertQuote): Promise<Quote>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<number, User>;
-  currentId: number;
+export class DatabaseStorage implements IStorage {
+  async getDailyQuote(theme: string): Promise<DailyQuote | undefined> {
+    const result = await db.select()
+      .from(quotes)
+      .where(eq(quotes.theme, theme))
+      .innerJoin(authors, eq(quotes.authorId, authors.id))
+      .limit(1);
 
-  constructor() {
-    this.users = new Map();
-    this.currentId = 1;
+    if (result.length === 0) return undefined;
+
+    const row = result[0];
+    return {
+      quote: {
+        id: row.quotes.id,
+        authorId: row.quotes.authorId,
+        text: row.quotes.text,
+        theme: row.quotes.theme,
+      },
+      author: {
+        id: row.authors.id,
+        name: row.authors.name,
+        imageUrl: row.authors.imageUrl,
+        bio: row.authors.bio,
+      }
+    };
   }
 
-  async getUser(id: number): Promise<User | undefined> {
-    return this.users.get(id);
+  async createAuthor(author: InsertAuthor): Promise<Author> {
+    const [result] = await db.insert(authors).values(author).returning();
+    return result;
   }
 
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
-  }
-
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.currentId++;
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+  async createQuote(quote: InsertQuote): Promise<Quote> {
+    const [result] = await db.insert(quotes).values(quote).returning();
+    return result;
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
