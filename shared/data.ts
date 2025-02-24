@@ -10,14 +10,20 @@ export const authors: InsertAuthor[] = [
   {
     id: 2,
     name: "Marie Curie",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Marie_Curie_c1920.png",
+    imageUrl: "/public/marie-curie.webp",
     bio: "Nobel Prize-winning physicist and chemist"
   },
   {
     id: 3,
-    name: "Maya Angelou",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/8/8d/Maya_Angelou_2.jpg",
-    bio: "Poet, memoirist, and civil rights activist"
+    name: "Theodore Roosevelt",
+    imageUrl: "/public/teddy-roosevelt.webp",
+    bio: "26th President of the United States, conservationist and author"
+  },
+  {
+    id: 4,
+    name: "Seneca",
+    imageUrl: "/public/seneca.webp",
+    bio: "Roman Stoic philosopher, statesman, and dramatist"
   }
 ];
 
@@ -31,52 +37,52 @@ export const quotes: InsertQuote[] = [
   },
   {
     id: 2,
-    authorId: 2,
-    text: "Nothing in life is to be feared, it is only to be understood.",
+    authorId: 3,
+    text: "Speak softly and carry a big stick; you will go far.",
     theme: "leadership"
   },
   {
     id: 3,
-    authorId: 3,
-    text: "Nothing will work unless you do.",
+    authorId: 4,
+    text: "A good leader must show the way by example rather than by force.",
     theme: "leadership"
   },
   // Focus quotes
   {
     id: 4,
-    authorId: 1,
-    text: "Great minds discuss ideas; average minds discuss events; small minds discuss people.",
-    theme: "focus"
-  },
-  {
-    id: 5,
     authorId: 2,
     text: "One never notices what has been done; one can only see what remains to be done.",
     theme: "focus"
   },
   {
-    id: 6,
+    id: 5,
     authorId: 3,
-    text: "Success is liking yourself, liking what you do, and liking how you do it.",
+    text: "Keep your eyes on the stars, and your feet on the ground.",
+    theme: "focus"
+  },
+  {
+    id: 6,
+    authorId: 4,
+    text: "It is not that we have a short time to live, but that we waste a lot of it.",
     theme: "focus"
   },
   // Growth quotes
   {
     id: 7,
-    authorId: 1,
-    text: "You gain strength, courage, and confidence by every experience in which you really stop to look fear in the face.",
-    theme: "growth"
-  },
-  {
-    id: 8,
     authorId: 2,
     text: "Life is not easy for any of us. But what of that? We must have perseverance and above all confidence in ourselves.",
     theme: "growth"
   },
   {
-    id: 9,
+    id: 8,
     authorId: 3,
-    text: "You can't really know where you are going until you know where you have been.",
+    text: "Nothing worth having comes easy. The only person who never makes mistakes is the person who never does anything.",
+    theme: "growth"
+  },
+  {
+    id: 9,
+    authorId: 4,
+    text: "As long as you live, keep learning how to live.",
     theme: "growth"
   }
 ];
