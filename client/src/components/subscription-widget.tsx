@@ -25,11 +25,16 @@ export function SubscriptionWidget() {
   });
 
   const { mutate: subscribe, isPending } = useMutation({
-    mutationFn: (data: SubscribeFormData) =>
-      apiRequest("/api/subscribe", {
+    mutationFn: async (data: SubscribeFormData) => {
+      const response = await apiRequest("/api/subscribe", {
         method: "POST",
-        body: data,
-      }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      return response;
+    },
     onSuccess: () => {
       toast({
         title: "Successfully subscribed!",
