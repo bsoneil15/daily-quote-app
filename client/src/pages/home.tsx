@@ -1,29 +1,17 @@
 import { useState } from "react";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ThemeType, type DailyQuote } from "@shared/schema";
 import { themeBackgrounds } from "@shared/data";
 import QuoteCard from "@/components/quote-card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Button } from "@/components/ui/button";
-import { Shuffle } from "lucide-react";
 
 export default function Home() {
   const [selectedTheme, setSelectedTheme] = useState<ThemeType>("leadership");
-  const [isShuffling, setIsShuffling] = useState(false);
-  const queryClient = useQueryClient();
 
   const { data: quotes, isLoading } = useQuery<Record<ThemeType, DailyQuote>>({
     queryKey: ["/api/quotes/daily"],
-    staleTime: 0, // Don't cache the data
-    cacheTime: 0, // Remove data from cache immediately
   });
-
-  const handleShuffle = async () => {
-    setIsShuffling(true);
-    await queryClient.invalidateQueries({ queryKey: ["/api/quotes/daily"] });
-    setTimeout(() => setIsShuffling(false), 500); // Add a small delay for better UX
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -51,7 +39,7 @@ export default function Home() {
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${themeBackgrounds[selectedTheme]})`,
           }}
         >
-          {isLoading || isShuffling ? (
+          {isLoading ? (
             <div className="flex items-center justify-center h-full">
               <Skeleton className="w-full max-w-2xl h-64" />
             </div>
@@ -67,15 +55,6 @@ export default function Home() {
             </div>
           )}
         </div>
-        <Button
-            variant="outline"
-            size="icon"
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 rounded-full shadow-md bg-background/80 backdrop-blur-sm hover:bg-background/90 transition-all"
-            onClick={handleShuffle}
-            disabled={isShuffling}
-          >
-            <Shuffle className={`h-5 w-5 ${isShuffling ? 'animate-spin' : ''}`} />
-          </Button>
       </main>
     </div>
   );
