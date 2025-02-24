@@ -1,6 +1,6 @@
 import { quotes, authors, type Author, type InsertAuthor, type Quote, type InsertQuote, type DailyQuote } from "@shared/schema";
 import { db } from "./db";
-import { eq } from "drizzle-orm";
+import { eq, sql } from "drizzle-orm";
 
 export interface IStorage {
   getDailyQuote(theme: string): Promise<DailyQuote | undefined>;
@@ -14,6 +14,7 @@ export class DatabaseStorage implements IStorage {
       .from(quotes)
       .where(eq(quotes.theme, theme))
       .innerJoin(authors, eq(quotes.authorId, authors.id))
+      .orderBy(sql`RANDOM()`)  // This ensures we get a random quote
       .limit(1);
 
     if (result.length === 0) return undefined;
