@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ThemeType, type DailyQuote } from "@shared/schema";
 import { themeBackgrounds } from "@shared/data";
@@ -10,6 +10,7 @@ import { Shuffle } from "lucide-react"; // Assuming this import is needed
 
 export default function Home() {
   const [selectedTheme, setSelectedTheme] = useState<ThemeType>("leadership");
+  const queryClient = useQueryClient();
 
   const { data: quotes, isLoading } = useQuery<Record<ThemeType, DailyQuote>>({
     queryKey: ["/api/quotes/daily"],
@@ -61,10 +62,7 @@ export default function Home() {
             variant="outline"
             size="icon"
             className="fixed bottom-6 left-1/2 -translate-x-1/2 rounded-full shadow-md bg-background/80 backdrop-blur-sm hover:bg-background/90 transition-all"
-            onClick={() => {
-              const queryClient = useQueryClient(); // Assuming useQueryClient is available in scope.  Otherwise, import it.
-              queryClient.invalidateQueries({ queryKey: ["/api/quotes/daily"] });
-            }}
+            onClick={() => queryClient.invalidateQueries({ queryKey: ["/api/quotes/daily"] })}
           >
             <Shuffle className="h-5 w-5" />
           </Button>

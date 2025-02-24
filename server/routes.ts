@@ -44,13 +44,17 @@ export async function registerRoutes(app: Express) {
   app.get("/api/quotes/daily", (_req, res) => {
     try {
       const dailyQuotes = getDailyQuotes();
+      if (!dailyQuotes || Object.keys(dailyQuotes).length === 0) {
+        throw new Error('No quotes available');
+      }
       res.json(dailyQuotes);
     } catch (error) {
       console.error('Error getting daily quotes:', error);
-      res.status(500).json({ 
-        message: 'Failed to fetch daily quotes',
-        error: error instanceof Error ? error.message : 'Unknown error'
-      });
+      res.status(error instanceof Error && error.message === 'No quotes available' ? 404 : 500)
+        .json({ 
+          message: 'Failed to fetch daily quotes',
+          error: error instanceof Error ? error.message : 'Unknown error'
+        });
     }
   });
 
