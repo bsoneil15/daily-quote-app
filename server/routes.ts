@@ -1,44 +1,46 @@
+
 import type { Express } from "express";
 import { createServer } from "http";
 import { storage } from "./storage";
 import { authors, quotes } from "@shared/data";
 import type { ThemeType, DailyQuote } from "@shared/schema";
 
+/**
+ * Generates daily quotes for each theme based on the day of year
+ */
 function getDailyQuotes(): Record<ThemeType, DailyQuote> {
-  // Simple date-based selection - changes daily
   const today = new Date();
   const dayOfYear = Math.floor(
-    (today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) /
-      (1000 * 60 * 60 * 24)
+    (today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / 
+    (1000 * 60 * 60 * 24)
   );
 
   const themes: ThemeType[] = ["leadership", "focus", "growth"];
   const result = {} as Record<ThemeType, DailyQuote>;
 
-  themes.forEach((theme) => {
-    const themeQuotes = quotes.filter((q) => q.theme === theme);
-    if (themeQuotes.length === 0) {
+  for (const theme of themes) {
+    const themeQuotes = quotes.filter(q => q.theme === theme);
+    
+    if (!themeQuotes.length) {
       throw new Error(`No quotes found for theme: ${theme}`);
     }
 
     const quoteIndex = dayOfYear % themeQuotes.length;
     const quote = themeQuotes[quoteIndex];
-    const author = authors.find((a) => a.id === quote.authorId);
+    const author = authors.find(a => a.id === quote.authorId);
 
     if (!quote || !author) {
       throw new Error(`Failed to find quote or author for theme: ${theme}`);
     }
 
-    result[theme] = {
-      quote,
-      author,
-    };
-  });
+    result[theme] = { quote, author };
+  }
 
   return result;
 }
 
 export async function registerRoutes(app: Express) {
+  // Daily quotes endpoint
   app.get("/api/quotes/daily", (_req, res) => {
     try {
       const dailyQuotes = getDailyQuotes();
@@ -52,6 +54,5 @@ export async function registerRoutes(app: Express) {
     }
   });
 
-  const httpServer = createServer(app);
-  return httpServer;
+  return createServer(app);
 }
