@@ -5,7 +5,6 @@ import { ThemeType, type DailyQuote } from "@shared/schema";
 import { themeBackgrounds } from "@shared/data";
 import QuoteCard from "@/components/quote-card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { SubscriptionWidget } from "@/components/subscription-widget";
 
 export default function Home() {
   const [selectedTheme, setSelectedTheme] = useState<ThemeType>("leadership");
@@ -25,7 +24,7 @@ export default function Home() {
         <Tabs
           value={selectedTheme}
           onValueChange={(value) => setSelectedTheme(value as ThemeType)}
-          className="mb-4"
+          className="mb-8"
         >
           <TabsList className="grid w-full grid-cols-3 max-w-md mx-auto">
             <TabsTrigger value="leadership">Leadership</TabsTrigger>
@@ -33,10 +32,6 @@ export default function Home() {
             <TabsTrigger value="growth">Growth</TabsTrigger>
           </TabsList>
         </Tabs>
-
-        <div className="mb-8">
-          <SubscriptionWidget />
-        </div>
 
         <div
           className="relative rounded-lg overflow-hidden bg-cover bg-center min-h-[500px] p-6"

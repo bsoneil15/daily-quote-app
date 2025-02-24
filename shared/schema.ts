@@ -18,23 +18,13 @@ export const quotes = pgTable("quotes", {
   theme: varchar("theme", { length: 20 }).notNull(),
 });
 
-export const subscribers = pgTable("subscribers", {
-  id: serial("id").primaryKey(),
-  email: text("email").notNull().unique(),
-  createdAt: timestamp("created_at").defaultNow(),
-  preferences: text("preferences").default("{}"),
-});
-
 export const insertAuthorSchema = createInsertSchema(authors);
 export const insertQuoteSchema = createInsertSchema(quotes);
-export const insertSubscriberSchema = createInsertSchema(subscribers).omit({ createdAt: true });
 
 export type Author = typeof authors.$inferSelect;
 export type Quote = typeof quotes.$inferSelect;
-export type Subscriber = typeof subscribers.$inferSelect;
 export type InsertAuthor = z.infer<typeof insertAuthorSchema>;
 export type InsertQuote = z.infer<typeof insertQuoteSchema>;
-export type InsertSubscriber = z.infer<typeof insertSubscriberSchema>;
 
 export type DailyQuote = {
   quote: Quote;
