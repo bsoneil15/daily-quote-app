@@ -5,6 +5,8 @@ import { ThemeType, type DailyQuote } from "@shared/schema";
 import { themeBackgrounds } from "@shared/data";
 import QuoteCard from "@/components/quote-card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/button";
+import { Shuffle } from "lucide-react"; // Assuming this import is needed
 
 export default function Home() {
   const [selectedTheme, setSelectedTheme] = useState<ThemeType>("leadership");
@@ -55,6 +57,17 @@ export default function Home() {
             </div>
           )}
         </div>
+        <Button
+            variant="outline"
+            size="icon"
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 rounded-full shadow-md bg-background/80 backdrop-blur-sm hover:bg-background/90 transition-all"
+            onClick={() => {
+              const queryClient = useQueryClient(); // Assuming useQueryClient is available in scope.  Otherwise, import it.
+              queryClient.invalidateQueries({ queryKey: ["/api/quotes/daily"] });
+            }}
+          >
+            <Shuffle className="h-5 w-5" />
+          </Button>
       </main>
     </div>
   );
