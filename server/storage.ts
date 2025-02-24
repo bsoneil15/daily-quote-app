@@ -1,4 +1,4 @@
-import { quotes, authors, type Author, type InsertAuthor, type Quote, type InsertQuote, type DailyQuote } from "@shared/schema";
+import { quotes, authors, subscribers, type Author, type InsertAuthor, type Quote, type InsertQuote, type DailyQuote, type InsertSubscriber, type Subscriber } from "@shared/schema";
 import { db } from "./db";
 import { eq } from "drizzle-orm";
 
@@ -6,6 +6,8 @@ export interface IStorage {
   getDailyQuote(theme: string): Promise<DailyQuote | undefined>;
   createAuthor(author: InsertAuthor): Promise<Author>;
   createQuote(quote: InsertQuote): Promise<Quote>;
+  createSubscriber(subscriber: InsertSubscriber): Promise<Subscriber>;
+  getSubscriberByEmail(email: string): Promise<Subscriber | undefined>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -42,6 +44,16 @@ export class DatabaseStorage implements IStorage {
 
   async createQuote(quote: InsertQuote): Promise<Quote> {
     const [result] = await db.insert(quotes).values(quote).returning();
+    return result;
+  }
+
+  async createSubscriber(subscriber: InsertSubscriber): Promise<Subscriber> {
+    const [result] = await db.insert(subscribers).values(subscriber).returning();
+    return result;
+  }
+
+  async getSubscriberByEmail(email: string): Promise<Subscriber | undefined> {
+    const [result] = await db.select().from(subscribers).where(eq(subscribers.email, email));
     return result;
   }
 }
