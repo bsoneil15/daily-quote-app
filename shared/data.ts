@@ -10,19 +10,19 @@ export const authors: InsertAuthor[] = [
   {
     id: 2,
     name: "Marie Curie",
-    imageUrl: "/public/marie-curie.webp",
+    imageUrl: "/marie-curie.webp",
     bio: "Nobel Prize-winning physicist and chemist"
   },
   {
     id: 3,
     name: "Theodore Roosevelt",
-    imageUrl: "/public/teddy-roosevelt.webp",
+    imageUrl: "/teddy-roosevelt.webp",
     bio: "26th President of the United States, conservationist and author"
   },
   {
     id: 4,
     name: "Seneca",
-    imageUrl: "/public/seneca.webp",
+    imageUrl: "/seneca.webp",
     bio: "Roman Stoic philosopher, statesman, and dramatist"
   }
 ];
