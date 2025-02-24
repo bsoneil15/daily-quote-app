@@ -55,76 +55,112 @@ export const quotes: InsertQuote[] = [
   },
   {
     id: 2,
+    authorId: 1,
+    text: "The battlefield is a scene of constant chaos. The winner will be the one who controls that chaos, both his own and the enemy's.",
+    theme: "leadership"
+  },
+  {
+    id: 3,
     authorId: 2,
     text: "A great leader never sets out to be a leader. He sets out to make a difference.",
     theme: "leadership"
   },
   {
-    id: 3,
+    id: 4,
     authorId: 3,
     text: "The measure of a man is what he does with power.",
     theme: "leadership"
   },
   {
-    id: 4,
-    authorId: 4,
-    text: "Nothing in life is to be feared; it is only to be understood.",
+    id: 5,
+    authorId: 3,
+    text: "Wise men speak because they have something to say; fools because they have to say something.",
     theme: "leadership"
   },
   {
-    id: 5,
+    id: 6,
     authorId: 5,
-    text: "Difficulties are just things to overcome, after all.",
+    text: "Optimism is true moral courage.",
+    theme: "leadership"
+  },
+  {
+    id: 7,
+    authorId: 6,
+    text: "The best executive is one who has sense enough to pick good men to do what he wants done, and self-restraint to keep from meddling while they do it.",
     theme: "leadership"
   },
   // Focus quotes
   {
-    id: 6,
+    id: 8,
     authorId: 1,
     text: "Take time to deliberate, but when the time for action comes, stop thinking and go in.",
     theme: "focus"
   },
   {
-    id: 7,
+    id: 9,
     authorId: 2,
     text: "He who is everywhere is nowhere.",
     theme: "focus"
   },
   {
-    id: 8,
+    id: 10,
     authorId: 3,
     text: "Better a little which is well done, than a great deal imperfectly.",
     theme: "focus"
   },
   {
-    id: 9,
+    id: 11,
+    authorId: 4,
+    text: "One never notices what has been done; one can only see what remains to be done.",
+    theme: "focus"
+  },
+  {
+    id: 12,
     authorId: 7,
     text: "Concentrate every minute on doing what's in front of you with precise and genuine seriousness.",
     theme: "focus"
   },
+  {
+    id: 13,
+    authorId: 7,
+    text: "Everything we hear is an opinion, not a fact. Everything we see is a perspective, not the truth.",
+    theme: "focus"
+  },
   // Growth quotes
   {
-    id: 10,
+    id: 14,
     authorId: 1,
     text: "Impossible is a word to be found only in the dictionary of fools.",
     theme: "growth"
   },
   {
-    id: 11,
+    id: 15,
     authorId: 2,
     text: "It is not because things are difficult that we do not dare; it is because we do not dare that they are difficult.",
     theme: "growth"
   },
   {
-    id: 12,
+    id: 16,
+    authorId: 4,
+    text: "Life is not easy for any of us. But what of that? We must have perseverance and above all confidence in ourselves.",
+    theme: "growth"
+  },
+  {
+    id: 17,
     authorId: 6,
     text: "Do what you can, with what you have, where you are.",
     theme: "growth"
   },
   {
-    id: 13,
+    id: 18,
     authorId: 7,
     text: "The happiness of your life depends upon the quality of your thoughts.",
+    theme: "growth"
+  },
+  {
+    id: 19,
+    authorId: 7,
+    text: "Waste no more time arguing about what a good man should be. Be one.",
     theme: "growth"
   }
 ];
