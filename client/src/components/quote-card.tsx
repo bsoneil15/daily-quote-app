@@ -1,6 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Share2 } from "lucide-react";
+import { Share2, Download } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa";
 import { ThemeType, type Quote, type Author } from "@shared/schema";
 import { themeColors } from "@shared/data";
 import { useState } from "react";
@@ -15,24 +17,83 @@ export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
   const colors = themeColors[theme];
   const [imageError, setImageError] = useState(false);
 
-  const handleShare = async () => {
-    const shareData = {
-      title: "Daily Wisdom",
-      text: `"${quote.text}" - ${author.name}`,
-      url: window.location.href,
-    };
+  const generateQuoteImage = async () => {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
 
-    try {
-      if (navigator.share) {
-        await navigator.share(shareData);
+    // Set canvas size
+    canvas.width = 1200;
+    canvas.height = 630;
+
+    if (!ctx) return null;
+
+    // Set background
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Add quote text
+    ctx.font = '48px serif';
+    ctx.fillStyle = 'black';
+    ctx.textAlign = 'center';
+
+    // Wrap text
+    const words = quote.text.split(' ');
+    let line = '';
+    let lines = [];
+    let y = 200;
+
+    for (let word of words) {
+      const testLine = line + word + ' ';
+      if (ctx.measureText(testLine).width > canvas.width - 100) {
+        lines.push(line);
+        line = word + ' ';
       } else {
-        await navigator.clipboard.writeText(
-          `${shareData.text}\n${shareData.url}`
-        );
+        line = testLine;
       }
-    } catch (err) {
-      console.error("Error sharing:", err);
     }
+    lines.push(line);
+
+    // Draw wrapped text
+    lines.forEach((line) => {
+      ctx.fillText(line, canvas.width / 2, y);
+      y += 60;
+    });
+
+    // Add author
+    ctx.font = '32px sans-serif';
+    ctx.fillText(`- ${author.name}`, canvas.width / 2, y + 40);
+
+    return canvas.toDataURL('image/png');
+  };
+
+  const handleDownload = async () => {
+    const imageUrl = await generateQuoteImage();
+    if (!imageUrl) return;
+
+    const link = document.createElement('a');
+    link.download = `quote-${author.name.toLowerCase().replace(/\s+/g, '-')}.png`;
+    link.href = imageUrl;
+    link.click();
+  };
+
+  const handleTwitterShare = async () => {
+    const text = `"${quote.text}" - ${author.name}`;
+    const url = window.location.href;
+    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+  };
+
+  const handleInstagramShare = async () => {
+    // Since Instagram doesn't have a web share API, we'll generate and download the image
+    const imageUrl = await generateQuoteImage();
+    if (!imageUrl) return;
+
+    const link = document.createElement('a');
+    link.download = `instagram-quote-${author.name.toLowerCase().replace(/\s+/g, '-')}.png`;
+    link.href = imageUrl;
+    link.click();
+
+    // Show instructions for Instagram
+    alert('Image downloaded! To share on Instagram:\n1. Open Instagram\n2. Create a new post\n3. Select the downloaded image\n4. Share!');
   };
 
   return (
@@ -62,14 +123,32 @@ export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
                 <p className="font-semibold">{author.name}</p>
                 <p className="text-sm text-muted-foreground">{author.bio}</p>
               </div>
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={handleShare}
-                className={`${colors.secondary} hover:${colors.primary} hover:text-white transition-colors`}
-              >
-                <Share2 className="h-4 w-4" />
-              </Button>
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={handleTwitterShare}
+                  className={`${colors.secondary} hover:${colors.primary} hover:text-white transition-colors`}
+                >
+                  <FaXTwitter className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={handleInstagramShare}
+                  className={`${colors.secondary} hover:${colors.primary} hover:text-white transition-colors`}
+                >
+                  <FaInstagram className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={handleDownload}
+                  className={`${colors.secondary} hover:${colors.primary} hover:text-white transition-colors`}
+                >
+                  <Download className="h-4 w-4" />
+                </Button>
+              </div>
             </div>
           </div>
         </div>
