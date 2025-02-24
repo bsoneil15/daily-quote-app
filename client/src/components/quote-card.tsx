@@ -1,11 +1,12 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Share2, Download } from "lucide-react";
+import { Share2, Copy } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { ThemeType, type Quote, type Author } from "@shared/schema";
 import { themeColors } from "@shared/data";
 import { useState } from "react";
+import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 
 interface QuoteCardProps {
   quote: Quote;
@@ -15,6 +16,7 @@ interface QuoteCardProps {
 
 export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
   const colors = themeColors[theme];
+  const { copy } = useCopyToClipboard();
 
   const generateQuoteImage = async () => {
     const canvas = document.createElement('canvas');
@@ -65,15 +67,6 @@ export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
     return canvas.toDataURL('image/png');
   };
 
-  const handleDownload = async () => {
-    const imageUrl = await generateQuoteImage();
-    if (!imageUrl) return;
-
-    const link = document.createElement('a');
-    link.download = `quote-${author.name.toLowerCase().replace(/\s+/g, '-')}.png`;
-    link.href = imageUrl;
-    link.click();
-  };
 
   const handleTwitterShare = async () => {
     const text = `"${quote.text}" - ${author.name}`;
@@ -82,17 +75,12 @@ export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
   };
 
   const handleInstagramShare = async () => {
-    // Since Instagram doesn't have a web share API, we'll generate and download the image
-    const imageUrl = await generateQuoteImage();
-    if (!imageUrl) return;
+    alert('Instagram sharing is currently not supported. You can copy the quote and share it manually on Instagram.');
+  };
 
-    const link = document.createElement('a');
-    link.download = `instagram-quote-${author.name.toLowerCase().replace(/\s+/g, '-')}.png`;
-    link.href = imageUrl;
-    link.click();
-
-    // Show instructions for Instagram
-    alert('Image downloaded! To share on Instagram:\n1. Open Instagram\n2. Create a new post\n3. Select the downloaded image\n4. Share!');
+  const handleCopyQuote = async () => {
+    const text = `"${quote.text}" - ${author.name}`;
+    await copy(text);
   };
 
   return (
@@ -128,10 +116,10 @@ export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
                 <Button
                   variant="outline"
                   size="icon"
-                  onClick={handleDownload}
+                  onClick={handleCopyQuote}
                   className={`${colors.secondary} hover:${colors.primary} hover:text-white transition-colors`}
                 >
-                  <Download className="h-3 w-3 sm:h-4 sm:w-4" />
+                  <Copy className="h-3 w-3 sm:h-4 sm:w-4" />
                 </Button>
               </div>
             </div>
