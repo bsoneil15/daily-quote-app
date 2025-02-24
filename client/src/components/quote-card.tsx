@@ -18,56 +18,6 @@ export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
   const colors = themeColors[theme];
   const { copy } = useCopyToClipboard();
 
-  const generateQuoteImage = async () => {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-
-    // Set canvas size
-    canvas.width = 1200;
-    canvas.height = 630;
-
-    if (!ctx) return null;
-
-    // Set background
-    ctx.fillStyle = 'white';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    // Add quote text
-    ctx.font = '48px serif';
-    ctx.fillStyle = 'black';
-    ctx.textAlign = 'center';
-
-    // Wrap text
-    const words = quote.text.split(' ');
-    let line = '';
-    let lines = [];
-    let y = 200;
-
-    for (let word of words) {
-      const testLine = line + word + ' ';
-      if (ctx.measureText(testLine).width > canvas.width - 100) {
-        lines.push(line);
-        line = word + ' ';
-      } else {
-        line = testLine;
-      }
-    }
-    lines.push(line);
-
-    // Draw wrapped text
-    lines.forEach((line) => {
-      ctx.fillText(line, canvas.width / 2, y);
-      y += 60;
-    });
-
-    // Add author
-    ctx.font = '32px sans-serif';
-    ctx.fillText(`- ${author.name}`, canvas.width / 2, y + 40);
-
-    return canvas.toDataURL('image/png');
-  };
-
-
   const handleTwitterShare = async () => {
     const text = `"${quote.text}" - ${author.name}`;
     const url = window.location.href;
@@ -88,6 +38,7 @@ export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
       <CardContent className="p-4 sm:p-6">
         <div className="flex flex-col md:flex-row gap-4 sm:gap-6">
           <div className="flex-1">
+            <p className="text-sm text-center text-muted-foreground mb-4">new quotes every day</p>
             <blockquote className={`text-lg sm:text-xl md:text-2xl font-serif mb-3 sm:mb-4 ${colors.text} leading-relaxed text-center md:text-left`}>
               "{quote.text}"
             </blockquote>
@@ -123,6 +74,7 @@ export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
                 </Button>
               </div>
             </div>
+            <p className="text-xs text-center text-muted-foreground mt-6 italic">💬 built by Brendan O'Neil, powered by Replit</p>
           </div>
         </div>
       </CardContent>
