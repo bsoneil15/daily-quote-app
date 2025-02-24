@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ThemeType } from "@shared/schema";
+import { ThemeType, type DailyQuote } from "@shared/schema";
 import { themeBackgrounds } from "@shared/data";
 import QuoteCard from "@/components/quote-card";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -9,7 +9,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 export default function Home() {
   const [selectedTheme, setSelectedTheme] = useState<ThemeType>("leadership");
 
-  const { data: quotes, isLoading } = useQuery({
+  const { data: quotes, isLoading } = useQuery<Record<ThemeType, DailyQuote>>({
     queryKey: ["/api/quotes/daily"],
   });
 
@@ -42,14 +42,16 @@ export default function Home() {
             <div className="flex items-center justify-center h-full">
               <Skeleton className="w-full max-w-2xl h-64" />
             </div>
+          ) : quotes && quotes[selectedTheme] ? (
+            <QuoteCard
+              quote={quotes[selectedTheme].quote}
+              author={quotes[selectedTheme].author}
+              theme={selectedTheme}
+            />
           ) : (
-            quotes && (
-              <QuoteCard
-                quote={quotes[selectedTheme].quote}
-                author={quotes[selectedTheme].author}
-                theme={selectedTheme}
-              />
-            )
+            <div className="text-white text-center">
+              No quote available for this theme
+            </div>
           )}
         </div>
       </main>
