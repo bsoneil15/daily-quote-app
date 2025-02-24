@@ -16,9 +16,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <main className="container max-w-6xl mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+        <h1 className="text-4xl font-bold text-center mb-2 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
           Daily Wisdom
         </h1>
+        <p className="text-sm text-center text-muted-foreground mb-8">new quotes every day</p>
 
         <Tabs
           value={selectedTheme}

@@ -38,7 +38,6 @@ export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
       <CardContent className="p-4 sm:p-6">
         <div className="flex flex-col md:flex-row gap-4 sm:gap-6">
           <div className="flex-1">
-            <p className="text-sm text-center text-muted-foreground mb-4">new quotes every day</p>
             <blockquote className={`text-lg sm:text-xl md:text-2xl font-serif mb-3 sm:mb-4 ${colors.text} leading-relaxed text-center md:text-left`}>
               "{quote.text}"
             </blockquote>
