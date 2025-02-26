@@ -16,9 +16,19 @@ export default function Home() {
   });
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className={cn(
+      "min-h-screen transition-colors duration-500",
+      selectedTheme === "leadership" && "bg-emerald-50",
+      selectedTheme === "focus" && "bg-blue-50",
+      selectedTheme === "growth" && "bg-amber-50"
+    )}>
       <main className="container max-w-6xl mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-center mb-2 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+        <h1 className={cn(
+          "text-4xl font-bold text-center mb-2",
+          selectedTheme === "leadership" && "text-emerald-900",
+          selectedTheme === "focus" && "text-blue-900",
+          selectedTheme === "growth" && "text-amber-900"
+        )}>
           Daily Wisdom
         </h1>
         <p className="text-sm text-center text-muted-foreground mb-8">New quotes every day</p>
