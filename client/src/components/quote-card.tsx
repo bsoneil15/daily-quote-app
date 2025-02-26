@@ -6,7 +6,7 @@ import { MdEmail } from "react-icons/md";
 import { ThemeType, type Quote, type Author } from "@shared/schema";
 import { themeColors } from "@shared/data";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface QuoteCardProps {
   quote: Quote;
@@ -42,7 +42,7 @@ export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
     >
-      <Card className={`backdrop-blur-sm bg-white/90 max-w-2xl mx-auto shadow-lg border-2 ${colors.secondary.replace('bg-', 'border-')}`}>
+      <Card className={`backdrop-blur-sm bg-white/90 max-w-2xl mx-auto shadow-lg border-2 ${colors.text.replace('text-', 'border-')}`}>
         <CardContent className="p-4 sm:p-6">
           <div className="flex flex-col md:flex-row gap-4 sm:gap-6">
             <div className="flex-1">
