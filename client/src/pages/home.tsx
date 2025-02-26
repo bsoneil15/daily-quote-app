@@ -38,7 +38,7 @@ export default function Home() {
           onValueChange={(value) => setSelectedTheme(value as ThemeType)}
           className="mb-8"
         >
-          <TabsList className="grid w-full grid-cols-3 max-w-md mx-auto bg-gray-100/80 backdrop-blur-sm">
+          <TabsList className="grid w-full grid-cols-3 max-w-md mx-auto bg-gray-200/80 backdrop-blur-sm">
             <TabsTrigger 
               value="leadership"
               className={cn(
