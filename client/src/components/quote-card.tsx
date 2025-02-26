@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Copy } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
-import { FaInstagram } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import { ThemeType, type Quote, type Author } from "@shared/schema";
 import { themeColors } from "@shared/data";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
@@ -24,8 +24,10 @@ export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
     window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
   };
 
-  const handleInstagramShare = async () => {
-    alert('Instagram sharing is currently not supported. You can copy the quote and share it manually on Instagram.');
+  const handleEmailShare = async () => {
+    const subject = "Daily Wisdom Quote";
+    const body = `"${quote.text}"\n\n- ${author.name}\n${author.bio}`;
+    window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const handleCopyQuote = async () => {
@@ -40,7 +42,7 @@ export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
     >
-      <Card className="backdrop-blur-sm bg-white/90 max-w-2xl mx-auto shadow-lg">
+      <Card className={`backdrop-blur-sm bg-white/90 max-w-2xl mx-auto shadow-lg border-2 ${colors.secondary.replace('bg-', 'border-')}`}>
         <CardContent className="p-4 sm:p-6">
           <div className="flex flex-col md:flex-row gap-4 sm:gap-6">
             <div className="flex-1">
@@ -76,10 +78,10 @@ export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
                   <Button
                     variant="outline"
                     size="icon"
-                    onClick={handleInstagramShare}
+                    onClick={handleEmailShare}
                     className={`${colors.secondary} hover:${colors.primary} hover:text-white transition-colors`}
                   >
-                    <FaInstagram className="h-3 w-3 sm:h-4 sm:w-4" />
+                    <MdEmail className="h-3 w-3 sm:h-4 sm:w-4" />
                   </Button>
                   <Button
                     variant="outline"
