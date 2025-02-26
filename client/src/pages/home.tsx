@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ThemeType, type DailyQuote } from "@shared/schema";
-import { themeBackgrounds } from "@shared/data";
+import { themeBackgrounds, themeColors } from "@shared/data";
 import QuoteCard from "@/components/quote-card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { motion, AnimatePresence } from "framer-motion";
@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <main className="container max-w-6xl mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-center mb-2 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+        <h1 className="text-4xl font-bold text-center mb-2 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
           Daily Wisdom
         </h1>
         <p className="text-sm text-center text-muted-foreground mb-8">new quotes every day</p>
@@ -28,9 +28,24 @@ export default function Home() {
           className="mb-8"
         >
           <TabsList className="grid w-full grid-cols-3 max-w-md mx-auto">
-            <TabsTrigger value="leadership">Leadership</TabsTrigger>
-            <TabsTrigger value="focus">Focus</TabsTrigger>
-            <TabsTrigger value="growth">Growth</TabsTrigger>
+            <TabsTrigger 
+              value="leadership"
+              className={`${selectedTheme === 'leadership' ? themeColors.leadership.primary + ' text-white' : ''}`}
+            >
+              Leadership
+            </TabsTrigger>
+            <TabsTrigger 
+              value="focus"
+              className={`${selectedTheme === 'focus' ? themeColors.focus.primary + ' text-white' : ''}`}
+            >
+              Focus
+            </TabsTrigger>
+            <TabsTrigger 
+              value="growth"
+              className={`${selectedTheme === 'growth' ? themeColors.growth.primary + ' text-white' : ''}`}
+            >
+              Growth
+            </TabsTrigger>
           </TabsList>
         </Tabs>
 
