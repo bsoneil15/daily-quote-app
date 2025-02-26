@@ -5,6 +5,7 @@ import { ThemeType, type DailyQuote } from "@shared/schema";
 import { themeBackgrounds } from "@shared/data";
 import QuoteCard from "@/components/quote-card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
   const [selectedTheme, setSelectedTheme] = useState<ThemeType>("leadership");
@@ -33,28 +34,34 @@ export default function Home() {
           </TabsList>
         </Tabs>
 
-        <div
+        <motion.div
           className="relative rounded-lg overflow-hidden bg-cover bg-center min-h-[500px] p-6"
           style={{
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${themeBackgrounds[selectedTheme]})`,
           }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
         >
           {isLoading ? (
             <div className="flex items-center justify-center h-full">
               <Skeleton className="w-full max-w-2xl h-64" />
             </div>
           ) : quotes && quotes[selectedTheme] ? (
-            <QuoteCard
-              quote={quotes[selectedTheme].quote}
-              author={quotes[selectedTheme].author}
-              theme={selectedTheme}
-            />
+            <AnimatePresence mode="wait">
+              <QuoteCard
+                key={selectedTheme}
+                quote={quotes[selectedTheme].quote}
+                author={quotes[selectedTheme].author}
+                theme={selectedTheme}
+              />
+            </AnimatePresence>
           ) : (
             <div className="text-white text-center">
               No quote available for this theme
             </div>
           )}
-        </div>
+        </motion.div>
       </main>
     </div>
   );
