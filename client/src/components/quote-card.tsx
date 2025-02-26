@@ -61,7 +61,7 @@ export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
                 className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0 mt-3 sm:mt-4"
               >
                 <div className="text-center md:text-left">
-                  <p className="font-semibold text-base sm:text-lg">{author.name}</p>
+                  <p className={`font-semibold text-base sm:text-lg ${colors.text}`}>{author.name}</p>
                   <p className="text-xs sm:text-sm text-muted-foreground">{author.bio}</p>
                 </div>
                 <div className="flex gap-2">
