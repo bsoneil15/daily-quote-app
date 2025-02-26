@@ -6,6 +6,7 @@ import { themeBackgrounds, themeColors } from "@shared/data";
 import QuoteCard from "@/components/quote-card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   const [selectedTheme, setSelectedTheme] = useState<ThemeType>("leadership");
@@ -30,19 +31,28 @@ export default function Home() {
           <TabsList className="grid w-full grid-cols-3 max-w-md mx-auto">
             <TabsTrigger 
               value="leadership"
-              className={`${selectedTheme === 'leadership' ? themeColors.leadership.primary + ' text-white' : ''} transition-colors`}
+              className={cn(
+                "data-[state=active]:text-white transition-all duration-200",
+                selectedTheme === "leadership" && "data-[state=active]:bg-emerald-700"
+              )}
             >
               Leadership
             </TabsTrigger>
             <TabsTrigger 
               value="focus"
-              className={`${selectedTheme === 'focus' ? themeColors.focus.primary + ' text-white' : ''} transition-colors`}
+              className={cn(
+                "data-[state=active]:text-white transition-all duration-200",
+                selectedTheme === "focus" && "data-[state=active]:bg-blue-700"
+              )}
             >
               Focus
             </TabsTrigger>
             <TabsTrigger 
               value="growth"
-              className={`${selectedTheme === 'growth' ? themeColors.growth.primary + ' text-white' : ''} transition-colors`}
+              className={cn(
+                "data-[state=active]:text-white transition-all duration-200",
+                selectedTheme === "growth" && "data-[state=active]:bg-amber-900"
+              )}
             >
               Growth
             </TabsTrigger>

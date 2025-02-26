@@ -174,7 +174,7 @@ export const themeBackgrounds = {
 export const themeColors = {
   leadership: {
     primary: "bg-emerald-700 hover:bg-emerald-800",
-    secondary: "bg-emerald-100 hover:bg-emerald-200",
+    secondary: "bg-emerald-100 hover:bg-emerald-200", 
     text: "text-emerald-900"
   },
   focus: {
