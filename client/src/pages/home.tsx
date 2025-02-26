@@ -20,7 +20,7 @@ export default function Home() {
         <h1 className="text-4xl font-bold text-center mb-2 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
           Daily Wisdom
         </h1>
-        <p className="text-sm text-center text-muted-foreground mb-8">new quotes every day</p>
+        <p className="text-sm text-center text-muted-foreground mb-8">New quotes every day</p>
 
         <Tabs
           value={selectedTheme}
@@ -30,19 +30,19 @@ export default function Home() {
           <TabsList className="grid w-full grid-cols-3 max-w-md mx-auto">
             <TabsTrigger 
               value="leadership"
-              className={`${selectedTheme === 'leadership' ? themeColors.leadership.primary + ' text-white' : ''}`}
+              className={`${selectedTheme === 'leadership' ? themeColors.leadership.primary + ' text-white' : ''} transition-colors`}
             >
               Leadership
             </TabsTrigger>
             <TabsTrigger 
               value="focus"
-              className={`${selectedTheme === 'focus' ? themeColors.focus.primary + ' text-white' : ''}`}
+              className={`${selectedTheme === 'focus' ? themeColors.focus.primary + ' text-white' : ''} transition-colors`}
             >
               Focus
             </TabsTrigger>
             <TabsTrigger 
               value="growth"
-              className={`${selectedTheme === 'growth' ? themeColors.growth.primary + ' text-white' : ''}`}
+              className={`${selectedTheme === 'growth' ? themeColors.growth.primary + ' text-white' : ''} transition-colors`}
             >
               Growth
             </TabsTrigger>

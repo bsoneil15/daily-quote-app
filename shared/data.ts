@@ -173,18 +173,18 @@ export const themeBackgrounds = {
 
 export const themeColors = {
   leadership: {
-    primary: "bg-emerald-700",
-    secondary: "bg-emerald-100",
+    primary: "bg-emerald-700 hover:bg-emerald-800",
+    secondary: "bg-emerald-100 hover:bg-emerald-200",
     text: "text-emerald-900"
   },
   focus: {
-    primary: "bg-blue-700",
-    secondary: "bg-blue-100", 
+    primary: "bg-blue-700 hover:bg-blue-800",
+    secondary: "bg-blue-100 hover:bg-blue-200", 
     text: "text-blue-900"
   },
   growth: {
-    primary: "bg-amber-900",
-    secondary: "bg-amber-100",
+    primary: "bg-amber-900 hover:bg-amber-950",
+    secondary: "bg-amber-100 hover:bg-amber-200",
     text: "text-amber-900"
   }
 };
