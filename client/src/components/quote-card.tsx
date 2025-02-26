@@ -71,7 +71,7 @@ export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
                     variant="outline"
                     size="icon"
                     onClick={handleTwitterShare}
-                    className={`${colors.secondary} hover:${colors.primary} hover:text-white transition-colors`}
+                    className={`${colors.text.replace('text-', 'border-')} hover:${colors.primary} hover:text-white transition-colors`}
                   >
                     <FaXTwitter className="h-3 w-3 sm:h-4 sm:w-4" />
                   </Button>
@@ -79,7 +79,7 @@ export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
                     variant="outline"
                     size="icon"
                     onClick={handleEmailShare}
-                    className={`${colors.secondary} hover:${colors.primary} hover:text-white transition-colors`}
+                    className={`${colors.text.replace('text-', 'border-')} hover:${colors.primary} hover:text-white transition-colors`}
                   >
                     <MdEmail className="h-3 w-3 sm:h-4 sm:w-4" />
                   </Button>
@@ -87,7 +87,7 @@ export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
                     variant="outline"
                     size="icon"
                     onClick={handleCopyQuote}
-                    className={`${colors.secondary} hover:${colors.primary} hover:text-white transition-colors`}
+                    className={`${colors.text.replace('text-', 'border-')} hover:${colors.primary} hover:text-white transition-colors`}
                   >
                     <Copy className="h-3 w-3 sm:h-4 sm:w-4" />
                   </Button>
