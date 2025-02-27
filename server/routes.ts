@@ -19,18 +19,26 @@ function getDailyQuotes(): Record<ThemeType, DailyQuote> {
   const result = {} as Record<ThemeType, DailyQuote>;
 
   for (const theme of themes) {
+    // Get quotes for this theme
     const themeQuotes = quotes.filter(q => q.theme === theme);
     
     if (!themeQuotes.length) {
       throw new Error(`No quotes found for theme: ${theme}`);
     }
 
+    // Select quote based on day of year
     const quoteIndex = dayOfYear % themeQuotes.length;
     const quote = themeQuotes[quoteIndex];
+    
+    if (!quote) {
+      throw new Error(`Failed to find quote for theme: ${theme}`);
+    }
+    
+    // Find matching author
     const author = authors.find(a => a.id === quote.authorId);
 
-    if (!quote || !author) {
-      throw new Error(`Failed to find quote or author for theme: ${theme}`);
+    if (!author) {
+      throw new Error(`Failed to find author with ID ${quote.authorId} for theme: ${theme}`);
     }
 
     result[theme] = { quote, author };
