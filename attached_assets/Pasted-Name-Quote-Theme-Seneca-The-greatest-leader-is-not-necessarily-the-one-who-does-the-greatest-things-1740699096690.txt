@@ -1,0 +1,236 @@
+Name,Quote,Theme
+Seneca,"The greatest leader is not necessarily the one who does the greatest things. He is the one that gets the people to do the greatest things.",Leadership
+Aristotle,"The roots of education are bitter, but the fruit is sweet.",Growth
+Marcus Aurelius,"The best revenge is to be unlike him who performed the injury.",Leadership
+Winston Churchill,"Success is not final, failure is not fatal: It is the courage to continue that counts.",Growth
+Teddy Roosevelt,"Do what you can, with what you have, where you are.",Focus
+Marie Curie,"Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less.",Growth
+Franklin D. Roosevelt,"The only limit to our realization of tomorrow is our doubts of today.",Growth
+Eleanor Roosevelt,"The future belongs to those who believe in the beauty of their dreams.",Leadership
+Mark Twain,"The secret of getting ahead is getting started.",Focus
+Benjamin Franklin,"An investment in knowledge pays the best interest.",Growth
+Nelson Mandela,"It always seems impossible until it's done.",Growth
+Maya Angelou,"You may not control all the events that happen to you, but you can decide not to be reduced by them.",Focus
+Albert Einstein,"Life is like riding a bicycle. To keep your balance, you must keep moving.",Focus
+Abraham Lincoln,"The best way to predict your future is to create it.",Leadership
+Confucius,"It does not matter how slowly you go as long as you do not stop.",Growth
+Thomas Jefferson,"I find that the harder I work, the more luck I seem to have.",Focus
+Viktor Frankl,"When we are no longer able to change a situation, we are challenged to change ourselves.",Growth
+John F. Kennedy,"Leadership and learning are indispensable to each other.",Leadership
+Rosa Parks,"I have learned over the years that when one's mind is made up, this diminishes fear.",Focus
+Leonardo da Vinci,"Learning never exhausts the mind.",Growth
+Margaret Thatcher,"You may have to fight a battle more than once to win it.",Leadership
+Ralph Waldo Emerson,"Do not go where the path may lead, go instead where there is no path and leave a trail.",Leadership
+Plato,"Courage is knowing what not to fear.",Focus
+Epictetus,"Wealth consists not in having great possessions, but in having few wants.",Focus
+Niccolò Machiavelli,"It is better to be feared than loved, if you cannot be both.",Leadership
+Seneca,"Luck is what happens when preparation meets opportunity.",Focus
+Aristotle,"We are what we repeatedly do. Excellence, then, is not an act, but a habit.",Growth
+Marcus Aurelius,"You have power over your mind—not outside events. Realize this, and you will find strength.",Focus
+Winston Churchill,"The price of greatness is responsibility.",Leadership
+Teddy Roosevelt,"Keep your eyes on the stars, and your feet on the ground.",Focus
+Marie Curie,"Be less curious about people and more curious about ideas.",Growth
+Franklin D. Roosevelt,"Happiness lies in the joy of achievement and the thrill of creative effort.",Growth
+Eleanor Roosevelt,"Great minds discuss ideas; average minds discuss events; small minds discuss people.",Leadership
+Mark Twain,"Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do.",Growth
+Benjamin Franklin,"Well done is better than well said.",Focus
+Nelson Mandela,"The greatest glory in living lies not in never falling, but in rising every time we fall.",Growth
+Maya Angelou,"If you don't like something, change it. If you can't change it, change your attitude.",Focus
+Albert Einstein,"Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.",Growth
+Abraham Lincoln,"I am not bound to win, but I am bound to be true. I am not bound to succeed, but I am bound to live up to what light I have.",Leadership
+Confucius,"The man who moves a mountain begins by carrying away small stones.",Focus
+Thomas Jefferson,"Determine never to be idle. No person will have occasion to complain of the want of time who never loses any.",Focus
+Viktor Frankl,"Everything can be taken from a man but one thing: the last of the human freedoms—to choose one’s attitude in any given set of circumstances.",Growth
+John F. Kennedy,"Efforts and courage are not enough without purpose and direction.",Leadership
+Rosa Parks,"Each person must live their life as a model for others.",Leadership
+Leonardo da Vinci,"Simplicity is the ultimate sophistication.",Focus
+Margaret Thatcher,"Disciplining yourself to do what you know is right and important, although difficult, is the highroad to pride, self-esteem, and personal satisfaction.",Focus
+Ralph Waldo Emerson,"What lies behind us and what lies before us are tiny matters compared to what lies within us.",Growth
+Plato,"The first and greatest victory is to conquer yourself.",Growth
+Epictetus,"It's not what happens to you, but how you react to it that matters.",Focus
+Niccolò Machiavelli,"The wise man does at once what the fool does finally.",Leadership
+Seneca,"It is not the man who has too little, but the man who craves more, that is poor.",Focus
+Aristotle,"Pleasure in the job puts perfection in the work.",Growth
+Marcus Aurelius,"The happiness of your life depends upon the quality of your thoughts.",Focus
+Winston Churchill,"To improve is to change; to be perfect is to change often.",Growth
+Teddy Roosevelt,"Believe you can and you're halfway there.",Leadership
+Marie Curie,"I was taught that the way of progress is neither swift nor easy.",Growth
+Franklin D. Roosevelt,"The only thing we have to fear is fear itself.",Leadership
+Eleanor Roosevelt,"Do one thing every day that scares you.",Growth
+Mark Twain,"Courage is resistance to fear, mastery of fear—not absence of fear.",Focus
+Benjamin Franklin,"Energy and persistence conquer all things.",Growth
+Nelson Mandela,"A winner is a dreamer who never gives up.",Leadership
+Maya Angelou,"We may encounter many defeats but we must not be defeated.",Growth
+Albert Einstein,"Try not to become a man of success, but rather try to become a man of value.",Leadership
+Abraham Lincoln,"My great concern is not whether you have failed, but whether you are content with your failure.",Growth
+Confucius,"Our greatest glory is not in never falling, but in rising every time we fall.",Growth
+Thomas Jefferson,"I find that the harder I work, the more luck I seem to have.",Focus
+Viktor Frankl,"The meaning of life is to give life meaning.",Growth
+John F. Kennedy,"Change is the law of life. And those who look only to the past or present are certain to miss the future.",Growth
+Rosa Parks,"I would like to be remembered as a person who wanted to be free... so other people would be also free.",Leadership
+Leonardo da Vinci,"As a well-spent day brings happy sleep, so a life well spent brings happy death.",Growth
+Margaret Thatcher,"You may have to fight a battle more than once to win it.",Leadership
+Ralph Waldo Emerson,"The only person you are destined to become is the person you decide to be.",Growth
+Plato,"Wise men speak because they have something to say; fools because they have to say something.",Focus
+Epictetus,"First say to yourself what you would be; and then do what you have to do.",Leadership
+Niccolò Machiavelli,"It is not titles that honor men, but men that honor titles.",Leadership
+Seneca,"While we are postponing, life speeds by.",Focus
+Aristotle,"The more you know, the more you realize you don't know.",Growth
+Marcus Aurelius,"Waste no more time arguing about what a good man should be. Be one.",Leadership
+Winston Churchill,"Attitude is a little thing that makes a big difference.",Focus
+Teddy Roosevelt,"The only man who never makes mistakes is the man who never does anything.",Growth
+Marie Curie,"Life is not easy for any of us. But what of that? We must have perseverance.",Growth
+Franklin D. Roosevelt,"Men are not prisoners of fate, but only prisoners of their own minds.",Focus
+Eleanor Roosevelt,"You must do the thing you think you cannot do.",Growth
+Mark Twain,"The two most important days in your life are the day you are born and the day you find out why.",Growth
+Benjamin Franklin,"Without continual growth and progress, such words as improvement, achievement, and success have no meaning.",Growth
+Nelson Mandela,"Education is the most powerful weapon which you can use to change the world.",Leadership
+Maya Angelou,"I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.",Leadership
+Albert Einstein,"It's not that I'm so smart, it's just that I stay with problems longer.",Focus
+Abraham Lincoln,"Always bear in mind that your own resolution to succeed is more important than any other.",Focus
+Confucius,"The will to win, the desire to succeed, the urge to reach your full potential... these are the keys that will unlock the door to personal excellence.",Growth
+Thomas Jefferson,"Do you want to know who you are? Don't ask. Act! Action will delineate and define you.",Leadership
+Viktor Frankl,"Life is never made unbearable by circumstances, but only by lack of meaning and purpose.",Growth
+John F. Kennedy,"The time to repair the roof is when the sun is shining.",Focus
+Rosa Parks,"Stand for something or you will fall for anything.",Leadership
+Leonardo da Vinci,"I have been impressed with the urgency of doing. Knowing is not enough; we must apply. Being willing is not enough; we must do.",Focus
+Margaret Thatcher,"Look at a day when you are supremely satisfied at the end. It's not a day when you lounge around doing nothing; it's a day you've had everything to do and you've done it.",Growth
+Ralph Waldo Emerson,"To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",Growth
+Plato,"Necessity is the mother of invention.",Focus
+Epictetus,"He is a wise man who does not grieve for the things which he has not, but rejoices for those which he has.",Focus
+Niccolò Machiavelli,"Where the willingness is great, the difficulties cannot be great.",Leadership
+Seneca,"Difficulties strengthen the mind, as labor does the body.",Growth
+Aristotle,"Knowing yourself is the beginning of all wisdom.",Growth
+Marcus Aurelius,"The soul becomes dyed with the color of its thoughts.",Focus
+Winston Churchill,"We make a living by what we get, but we make a life by what we give.",Leadership
+Teddy Roosevelt,"Far and away the best prize that life offers is the chance to work hard at work worth doing.",Focus
+Marie Curie,"You cannot hope to build a better world without improving the individuals.",Growth
+Franklin D. Roosevelt,"The test of our progress is not whether we add more to the abundance of those who have much; it is whether we provide enough for those who have little.",Leadership
+Eleanor Roosevelt,"No one can make you feel inferior without your consent.",Focus
+Mark Twain,"The fear of death follows from the fear of life. A man who lives fully is prepared to die at any time.",Growth
+Benjamin Franklin,"Tell me and I forget. Teach me and I remember. Involve me and I learn.",Growth
+Nelson Mandela,"There is no passion to be found playing small—in settling for a life that is less than the one you are capable of living.",Growth
+Maya Angelou,"You can't use up creativity. The more you use, the more you have.",Growth
+Albert Einstein,"The important thing is not to stop questioning. Curiosity has its own reason for existing.",Focus
+Abraham Lincoln,"I walk slowly, but I never walk backward.",Focus
+Confucius,"By three methods we may learn wisdom: First, by reflection, which is noblest; Second, by imitation, which is easiest; and third by experience, which is the bitterest.",Growth
+Thomas Jefferson,"Honesty is the first chapter in the book of wisdom.",Leadership
+Viktor Frankl,"Between stimulus and response, there is a space. In that space is our power to choose our response.",Focus
+John F. Kennedy,"As we express our gratitude, we must never forget that the highest appreciation is not to utter words, but to live by them.",Leadership
+Rosa Parks,"Memories of our lives, of our works and our deeds will continue in others.",Growth
+Leonardo da Vinci,"The noblest pleasure is the joy of understanding.",Growth
+Margaret Thatcher,"Plan your work for today and every day, then work your plan.",Focus
+Ralph Waldo Emerson,"The only way to have a friend is to be one.",Leadership
+Plato,"Good actions give strength to ourselves and inspire good actions in others.",Leadership
+Epictetus,"The key is to keep company only with people who uplift you, whose presence calls forth your best.",Focus
+Niccolò Machiavelli,"The lion cannot protect himself from traps, and the fox cannot defend himself from wolves. One must therefore be a fox to recognize traps, and a lion to frighten wolves.",Leadership
+Seneca,"As long as you live, keep learning how to live.",Growth
+Aristotle,"The aim of the wise is not to secure pleasure, but to avoid pain.",Focus
+Marcus Aurelius,"If it is not right, do not do it; if it is not true, do not say it.",Leadership
+Winston Churchill,"Courage is what it takes to stand up and speak; courage is also what it takes to sit down and listen.",Leadership
+Teddy Roosevelt,"In any moment of decision, the best thing you can do is the right thing, the next best thing is the wrong thing, and the worst thing you can do is nothing.",Leadership
+Marie Curie,"I am among those who think that science has great beauty.",Growth
+Franklin D. Roosevelt,"Democracy cannot succeed unless those who express their choice are prepared to choose wisely.",Leadership
+Eleanor Roosevelt,"People grow through experience if they meet life honestly and courageously.",Growth
+Mark Twain,"Whenever you find yourself on the side of the majority, it is time to pause and reflect.",Focus
+Benjamin Franklin,"Lost time is never found again.",Focus
+Nelson Mandela,"After climbing a great hill, one only finds that there are many more hills to climb.",Growth
+Maya Angelou,"If you are always trying to be normal, you will never know how amazing you can be.",Growth
+Albert Einstein,"Strive not to be a success, but rather to be of value.",Leadership
+Abraham Lincoln,"I do not think much of a man who is not wiser today than he was yesterday.",Growth
+Confucius,"To see what is right and not do it is a lack of courage.",Leadership
+Thomas Jefferson,"The glow of one warm thought is to me worth more than money.",Focus
+Viktor Frankl,"What is to give light must endure burning.",Growth
+John F. Kennedy,"The rights of every man are diminished when the rights of one man are threatened.",Leadership
+Rosa Parks,"I believe we are here on the planet Earth to live, grow up and do what we can to make this world a better place.",Growth
+Leonardo da Vinci,"Art is never finished, only abandoned.",Focus
+Margaret Thatcher,"I do not know anyone who has got to the top without hard work. That is the recipe. It will not always get you to the top, but should get you pretty near.",Growth
+Ralph Waldo Emerson,"Don’t be pushed by your problems. Be led by your dreams.",Leadership
+Plato,"The measure of a man is what he does with power.",Leadership
+Epictetus,"No man is free who is not master of himself.",Focus
+Niccolò Machiavelli,"Men are driven by two principal impulses, either by love or by fear.",Leadership
+Seneca,"He who is brave is free.",Leadership
+Aristotle,"The energy of the mind is the essence of life.",Focus
+Marcus Aurelius,"The universe is change; our life is what our thoughts make it.",Growth
+Winston Churchill,"If you're going through hell, keep going.",Growth
+Teddy Roosevelt,"It is hard to fail, but it is worse never to have tried to succeed.",Growth
+Marie Curie,"One never notices what has been done; one can only see what remains to be done.",Focus
+Franklin D. Roosevelt,"There are many ways of going forward, but only one way of standing still.",Growth
+Eleanor Roosevelt,"With the new day comes new strength and new thoughts.",Growth
+Mark Twain,"The man who does not read has no advantage over the man who cannot read.",Growth
+Benjamin Franklin,"By failing to prepare, you are preparing to fail.",Focus
+Nelson Mandela,"I learned that courage was not the absence of fear, but the triumph over it.",Leadership
+Maya Angelou,"You alone are enough. You have nothing to prove to anybody.",Focus
+Albert Einstein,"In the middle of difficulty lies opportunity.",Growth
+Abraham Lincoln,"The probability that we may fail in the struggle ought not to deter us from the support of a cause we believe to be just.",Leadership
+Confucius,"The superior man is modest in his speech, but exceeds in his actions.",Leadership
+Thomas Jefferson,"I like the dreams of the future better than the history of the past.",Growth
+Viktor Frankl,"The attempt to develop a sense of humor and to see things in a humorous light is some kind of a trick learned while mastering the art of living.",Focus
+John F. Kennedy,"We must find time to stop and thank the people who make a difference in our lives.",Leadership
+Rosa Parks,"The only tired I was, was tired of giving in.",Growth
+Leonardo da Vinci,"While I thought that I was learning how to live, I have been learning how to die.",Growth
+Margaret Thatcher,"You turn if you want to. The lady's not for turning.",Leadership
+Ralph Waldo Emerson,"Nothing great was ever achieved without enthusiasm.",Growth
+Plato,"The greatest wealth is to live content with little.",Focus
+Epictetus,"Freedom is the only worthy goal in life. It is won by disregarding things that lie beyond our control.",Focus
+Niccolò Machiavelli,"Never was anything great achieved without danger.",Growth
+Seneca,"It is not because things are difficult that we do not dare; it is because we do not dare that they are difficult.",Leadership
+Aristotle,"The beauty of the soul shines out when a man bears with composure one heavy mischance after another, not because he does not feel them, but because he is a man of high and heroic temper.",Growth
+Marcus Aurelius,"The art of living is more like wrestling than dancing.",Focus
+Winston Churchill,"You have enemies? Good. That means you've stood up for something, sometime in your life.",Leadership
+Teddy Roosevelt,"No man is justified in doing evil on the ground of expedience.",Leadership
+Marie Curie,"I am one of those who think like Nobel, that humanity will draw more good than evil from new discoveries.",Growth
+Franklin D. Roosevelt,"We cannot always build the future for our youth, but we can build our youth for the future.",Leadership
+Eleanor Roosevelt,"It is not fair to ask of others what you are not willing to do yourself.",Leadership
+Mark Twain,"The best way to cheer yourself up is to try to cheer somebody else up.",Focus
+Benjamin Franklin,"Diligence is the mother of good luck.",Focus
+Nelson Mandela,"A good head and a good heart are always a formidable combination.",Leadership
+Maya Angelou,"If you find it in your heart to care for somebody else, you will have succeeded.",Leadership
+Albert Einstein,"The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.",Growth
+Abraham Lincoln,"You cannot escape the responsibility of tomorrow by evading it today.",Leadership
+Confucius,"To be wronged is nothing unless you continue to remember it.",Focus
+Thomas Jefferson,"I never considered a difference of opinion in politics, in religion, in philosophy, as cause for withdrawing from a friend.",Leadership
+Viktor Frankl,"Ultimate meaning necessarily exceeds and surpasses the finite intellectual capacities of man.",Growth
+John F. Kennedy,"Let us never negotiate out of fear. But let us never fear to negotiate.",Leadership
+Rosa Parks,"I knew someone had to take the first step and I made up my mind not to move.",Leadership
+Leonardo da Vinci,"The greatest deception men suffer is from their own opinions.",Focus
+Margaret Thatcher,"I am extraordinarily patient, provided I get my own way in the end.",Focus
+Ralph Waldo Emerson,"The creation of a thousand forests is in one acorn.",Growth
+Plato,"The direction in which education starts a man will determine his future in life.",Growth
+Epictetus,"There is only one way to happiness and that is to cease worrying about things which are beyond the power of our will.",Focus
+Niccolò Machiavelli,"The promise given was a necessity of the past: the word broken is a necessity of the present.",Leadership
+Seneca,"Life is like a play: it's not the length, but the excellence of the acting that matters.",Growth
+Aristotle,"The least initial deviation from the truth is multiplied later a thousandfold.",Focus
+Marcus Aurelius,"Everything we hear is an opinion, not a fact. Everything we see is a perspective, not the truth.",Focus
+Winston Churchill,"The empires of the future are the empires of the mind.",Growth
+Teddy Roosevelt,"Whenever you are asked if you can do a job, tell 'em, 'Certainly I can!' Then get busy and find out how to do it.",Leadership
+Marie Curie,"We must believe that we are gifted for something and that this thing must be attained.",Growth
+Franklin D. Roosevelt,"There is nothing to fear but fear itself.",Leadership
+Eleanor Roosevelt,"Friendship with oneself is all important, because without it one cannot be friends with anyone else in the world.",Growth
+Mark Twain,"The secret of success is making your vocation your vacation.",Focus
+Benjamin Franklin,"Hide not your talents. They for use were made. What's a sundial in the shade?",Growth
+Nelson Mandela,"There can be no keener revelation of a society's soul than the way in which it treats its children.",Leadership
+Maya Angelou,"Success is liking yourself, liking what you do, and liking how you do it.",Growth
+Albert Einstein,"Logic will get you from A to B. Imagination will take you everywhere.",Growth
+Abraham Lincoln,"The best thing about the future is that it comes one day at a time.",Focus
+Confucius,"When it is obvious that the goals cannot be reached, don't adjust the goals, adjust the action steps.",Leadership
+Thomas Jefferson,"I'm a great believer in luck, and I find the harder I work, the more I have of it.",Focus
+Viktor Frankl,"The point is not what we expect from life, but rather what life expects from us.",Growth
+John F. Kennedy,"The courage of life is often a less dramatic spectacle than the courage of a final moment; but it is no less a magnificent mixture of triumph and tragedy.",Growth
+Rosa Parks,"I would like to be known as a person who is concerned about freedom and equality and justice and prosperity for all people.",Leadership
+Leonardo da Vinci,"Time stays long enough for anyone who will use it.",Focus
+Margaret Thatcher,"You may have to fight a battle more than once to win it.",Leadership
+Ralph Waldo Emerson,"The only person you are destined to become is the person you decide to be.",Growth
+Plato,"The beginning is the most important part of the work.",Focus
+Epictetus,"Make the best use of what is in your power, and take the rest as it happens.",Focus
+Niccolò Machiavelli,"It is not titles that honor men, but men that honor titles.",Leadership
+Seneca,"While we are postponing, life speeds by.",Focus
+Aristotle,"The more you know, the more you realize you don't know.",Growth
+Marcus Aurelius,"Waste no more time arguing about what a good man should be. Be one.",Leadership
+Winston Churchill,"Attitude is a little thing that makes a big difference.",Focus
+Teddy Roosevelt,"The only man who never makes mistakes is the man who never does anything.",Growth
+Marie Curie,"Life is not easy for any of us. But what of that? We must have perseverance.",Growth
+Franklin D. Roosevelt,"Men are not prisoners of fate, but only prisoners of their own minds.",Focus
+Eleanor Roosevelt,"You must do the thing you think you cannot do.",Growth
+Mark Twain,"The two most important days in your life are the day you are born and the day you find out why.",Growth
+Benjamin Franklin,"Without continual growth and progress, such words as improvement, achievement, and success have no meaning.",Growth
