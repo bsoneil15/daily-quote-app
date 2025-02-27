@@ -48,6 +48,20 @@ function getDailyQuotes(): Record<ThemeType, DailyQuote> {
 }
 
 export async function registerRoutes(app: Express) {
+  // Get total quote count
+  app.get("/api/quotes/count", async (_req, res) => {
+    try {
+      const count = await storage.countQuotes();
+      res.json({ count });
+    } catch (error) {
+      console.error('Error getting quote count:', error);
+      res.status(500).json({ 
+        message: 'Failed to fetch quote count',
+        error: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
   // Daily quotes endpoint
   app.get("/api/quotes/daily", (_req, res) => {
     try {

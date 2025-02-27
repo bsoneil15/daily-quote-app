@@ -9,6 +9,16 @@ export interface IStorage {
 }
 
 export class DatabaseStorage implements IStorage {
+  async countQuotes(): Promise<number> {
+    try {
+      const result = await db.select({ count: sql<number>`count(*)` }).from(quotes);
+      return result[0]?.count || 0;
+    } catch (error) {
+      console.error('Error counting quotes:', error);
+      throw new Error(`Failed to count quotes: ${error instanceof Error ? error.message : 'Database error'}`);
+    }
+  }
+
   async getDailyQuote(theme: string): Promise<DailyQuote | undefined> {
     try {
       const result = await db.select()
