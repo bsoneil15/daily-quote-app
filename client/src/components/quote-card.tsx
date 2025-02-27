@@ -17,6 +17,11 @@ interface QuoteCardProps {
 export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
   const colors = themeColors[theme];
   const { copy } = useCopyToClipboard();
+  const borderColorClasses = {
+    leadership: 'border-green-500',
+    focus: 'border-blue-500',
+    growth: 'border-amber-500'
+  };
 
   const handleTwitterShare = async () => {
     const text = `"${quote.text}" - ${author.name}`;
@@ -42,7 +47,7 @@ export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
     >
-      <Card className={`backdrop-blur-sm bg-white/90 max-w-2xl mx-auto shadow-lg border-2 ${colors.text.replace('text-', 'border-')}`}>
+      <Card className={`backdrop-blur-sm bg-white/90 max-w-2xl mx-auto shadow-lg border-2 ${borderColorClasses[theme] || colors.text.replace('text-', 'border-')}`}>
         <CardContent className="p-4 sm:p-6">
           <div className="flex flex-col md:flex-row gap-4 sm:gap-6">
             <div className="flex-1">
