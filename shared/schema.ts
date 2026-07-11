@@ -1,4 +1,4 @@
-import { pgTable, text, serial, varchar, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, integer, varchar } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -13,13 +13,13 @@ export const authors = pgTable("authors", {
 
 export const quotes = pgTable("quotes", {
   id: serial("id").primaryKey(),
-  authorId: serial("author_id").references(() => authors.id),
+  authorId: integer("author_id").references(() => authors.id),
   text: text("text").notNull(),
   theme: varchar("theme", { length: 20 }).notNull(),
 });
 
-export const insertAuthorSchema = createInsertSchema(authors);
-export const insertQuoteSchema = createInsertSchema(quotes);
+export const insertAuthorSchema = createInsertSchema(authors).omit({ id: true });
+export const insertQuoteSchema = createInsertSchema(quotes).omit({ id: true });
 
 export type Author = typeof authors.$inferSelect;
 export type Quote = typeof quotes.$inferSelect;

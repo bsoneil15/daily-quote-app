@@ -1,6 +1,6 @@
-import type { InsertAuthor, InsertQuote } from "./schema";
+import type { Author, Quote } from "./schema";
 
-export const authors: InsertAuthor[] = [
+export const authors: Author[] = [
   {
     id: 1,
     name: "Napoleon Bonaparte",
@@ -45,7 +45,7 @@ export const authors: InsertAuthor[] = [
   }
 ];
 
-export const quotes: InsertQuote[] = [
+export const quotes: Quote[] = [
   // Leadership quotes
   {
     id: 1,

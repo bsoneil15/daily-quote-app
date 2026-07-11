@@ -3,6 +3,7 @@ import { db } from "./db";
 import { eq, sql } from "drizzle-orm";
 
 export interface IStorage {
+  countQuotes(): Promise<number>;
   getDailyQuote(theme: string): Promise<DailyQuote | undefined>;
   createAuthor(author: InsertAuthor): Promise<Author>;
   createQuote(quote: InsertQuote): Promise<Quote>;
