@@ -6,6 +6,9 @@ import QuoteCard from "@/components/quote-card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { useTheme } from "@/components/ThemeProvider";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const themeGradients = {
   leadership: "from-emerald-950/80 via-emerald-900/50 to-emerald-800/20",
@@ -40,12 +43,15 @@ const themeLabels: Record<ThemeType, string> = {
 
 export default function Home() {
   const [selectedTheme, setSelectedTheme] = useState<ThemeType>("leadership");
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
 
   const { data: quotes, isLoading } = useQuery<Record<ThemeType, DailyQuote>>({
     queryKey: ["/api/quotes/daily"],
   });
 
   return (
+    <TooltipProvider>
     <div className="relative min-h-screen overflow-hidden">
       <AnimatePresence mode="sync">
         <motion.div
@@ -70,16 +76,27 @@ export default function Home() {
         />
       </AnimatePresence>
 
-      <div className="absolute inset-0 bg-black/30" />
+      <motion.div
+        className="absolute inset-0"
+        animate={{ backgroundColor: isDark ? "rgba(0,0,0,0.55)" : "rgba(0,0,0,0.30)" }}
+        transition={{ duration: 0.4 }}
+      />
 
       <div className="relative z-10 min-h-screen flex flex-col">
-        <header className="pt-12 pb-4 text-center px-4">
-          <p className="text-white/50 text-xs tracking-[0.3em] uppercase font-medium mb-3">
-            Daily Wisdom
-          </p>
-          <h1 className="text-4xl sm:text-5xl font-serif font-light text-white tracking-tight">
-            Today's Insight
-          </h1>
+        <header className="pt-10 pb-4 px-4">
+          <div className="flex items-start justify-between max-w-2xl mx-auto w-full">
+            <div className="flex-1 text-center">
+              <p className="text-white/50 text-xs tracking-[0.3em] uppercase font-medium mb-3">
+                Daily Wisdom
+              </p>
+              <h1 className="text-4xl sm:text-5xl font-serif font-light text-white tracking-tight">
+                Today's Insight
+              </h1>
+            </div>
+            <div className="pt-1">
+              <ThemeToggle />
+            </div>
+          </div>
         </header>
 
         <div className="flex justify-center px-4 mt-4 mb-8">
@@ -131,5 +148,6 @@ export default function Home() {
         </main>
       </div>
     </div>
+    </TooltipProvider>
   );
 }
