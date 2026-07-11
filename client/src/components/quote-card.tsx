@@ -112,7 +112,16 @@ export default function QuoteCard({ quote, author, theme }: QuoteCardProps) {
         </motion.div>
 
         <p className="text-white/25 text-xs text-center mt-8 tracking-wide">
-          built by Brendan O'Neil · powered by Replit
+          built by{" "}
+          <a
+            href="https://www.linkedin.com/in/brendanoneil/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white/50 transition-colors underline underline-offset-2"
+          >
+            Brendan O'Neil
+          </a>
+          {" "}· powered by Replit
         </p>
       </div>
     </motion.div>
