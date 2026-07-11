@@ -9,6 +9,8 @@ import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { useTheme } from "@/components/ThemeProvider";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { Link } from "wouter";
+import { BookOpen } from "lucide-react";
 
 const themeGradients = {
   leadership: "from-emerald-950/80 via-emerald-900/50 to-emerald-800/20",
@@ -125,7 +127,7 @@ export default function Home() {
           </div>
         </div>
 
-        <main className="flex-1 flex items-center justify-center px-4 pb-16">
+        <main className="flex-1 flex items-center justify-center px-4 pb-4">
           {isLoading ? (
             <div className="w-full max-w-2xl space-y-4">
               <Skeleton className="h-8 w-3/4 mx-auto bg-white/10" />
@@ -146,6 +148,15 @@ export default function Home() {
             <p className="text-white/60 text-center">No quote available for this theme</p>
           )}
         </main>
+
+        <div className="flex justify-center pb-10 px-4">
+          <Link href="/browse">
+            <button className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/70 hover:text-white hover:bg-white/20 transition-all duration-300 text-sm font-medium shadow-lg">
+              <BookOpen className="h-4 w-4" />
+              Explore all quotes
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
     </TooltipProvider>

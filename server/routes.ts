@@ -62,6 +62,30 @@ export async function registerRoutes(app: Express) {
     }
   });
 
+  // All quotes endpoint (optionally filtered by theme)
+  app.get("/api/quotes/all", (req, res) => {
+    try {
+      const theme = req.query.theme as string | undefined;
+      const filtered = theme
+        ? quotes.filter(q => q.theme === theme)
+        : quotes;
+
+      const result = filtered.map(quote => {
+        const author = authors.find(a => a.id === quote.authorId);
+        if (!author) throw new Error(`Author not found for quote ${quote.id}`);
+        return { quote, author };
+      });
+
+      res.json(result);
+    } catch (error) {
+      console.error('Error getting all quotes:', error);
+      res.status(500).json({
+        message: 'Failed to fetch quotes',
+        error: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
   // Daily quotes endpoint
   app.get("/api/quotes/daily", (_req, res) => {
     try {
