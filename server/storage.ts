@@ -16,7 +16,7 @@ export class DatabaseStorage implements IStorage {
       return result[0]?.count || 0;
     } catch (error) {
       console.error('Error counting quotes:', error);
-      throw new Error(`Failed to count quotes: ${error instanceof Error ? error.message : 'Database error'}`);
+      throw new Error('Failed to count quotes');
     }
   }
 
@@ -48,7 +48,7 @@ export class DatabaseStorage implements IStorage {
       };
     } catch (error) {
       console.error(`Error getting daily quote for theme ${theme}:`, error);
-      throw new Error(`Failed to fetch daily quote: ${error instanceof Error ? error.message : 'Database error'}`);
+      throw new Error('Failed to fetch daily quote');
     }
   }
 
@@ -61,7 +61,7 @@ export class DatabaseStorage implements IStorage {
       return result;
     } catch (error) {
       console.error('Error creating author:', error);
-      throw new Error(`Failed to create author: ${error instanceof Error ? error.message : 'Database error'}`);
+      throw new Error('Failed to create author');
     }
   }
 
@@ -74,7 +74,7 @@ export class DatabaseStorage implements IStorage {
       return result;
     } catch (error) {
       console.error('Error creating quote:', error);
-      throw new Error(`Failed to create quote: ${error instanceof Error ? error.message : 'Database error'}`);
+      throw new Error('Failed to create quote');
     }
   }
 }

@@ -55,10 +55,7 @@ export async function registerRoutes(app: Express) {
       res.json({ count });
     } catch (error) {
       console.error('Error getting quote count:', error);
-      res.status(500).json({ 
-        message: 'Failed to fetch quote count',
-        error: error instanceof Error ? error.message : 'Unknown error'
-      });
+      res.status(500).json({ message: 'Internal server error' });
     }
   });
 
@@ -79,10 +76,7 @@ export async function registerRoutes(app: Express) {
       res.json(result);
     } catch (error) {
       console.error('Error getting all quotes:', error);
-      res.status(500).json({
-        message: 'Failed to fetch quotes',
-        error: error instanceof Error ? error.message : 'Unknown error'
-      });
+      res.status(500).json({ message: 'Internal server error' });
     }
   });
 
@@ -96,11 +90,7 @@ export async function registerRoutes(app: Express) {
       res.json(dailyQuotes);
     } catch (error) {
       console.error('Error getting daily quotes:', error);
-      res.status(error instanceof Error && error.message === 'No quotes available' ? 404 : 500)
-        .json({ 
-          message: 'Failed to fetch daily quotes',
-          error: error instanceof Error ? error.message : 'Unknown error'
-        });
+      res.status(500).json({ message: 'Internal server error' });
     }
   });
 
