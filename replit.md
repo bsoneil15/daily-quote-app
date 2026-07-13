@@ -16,6 +16,8 @@ git push origin main
 
 Pushes go to the `main` branch and will appear as commits on the GitHub profile.
 
+**Auto-push on deploy:** The deployment build command (`[deployment] build` in `.replit`) automatically runs `git push origin main` after a successful `npm run build`. If the git push fails (e.g. SSH unavailable or nothing new to push), a warning is logged and the deployment continues — build failures still fail the deployment as expected.
+
 ## Architecture
 
 - **Frontend:** React + TypeScript (Vite), TailwindCSS, shadcn/ui
