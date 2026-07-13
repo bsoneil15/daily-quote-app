@@ -34,13 +34,13 @@ The server must treat every request parameter as untrusted and must not let publ
 
 ### Information Disclosure
 
-The app does not process accounts or sensitive user content, but it still must avoid leaking secrets, stack traces, or internal error context. API responses and logs must not expose environment variables, raw database errors, or unpublished internal data. Any third-party asset loading must be understood as a browser privacy tradeoff, not mistaken for a server-side data leak.
+The app does not process accounts or sensitive user content, but it still must avoid leaking secrets, stack traces, or internal error context. **Known gap:** all three public API error handlers return raw database error messages in the JSON response body (`error: error.message`). This can expose PostgreSQL/Neon driver internals, table names, or query details to any client that triggers a database error. API error responses must return only generic messages; detailed error context must remain server-side in logs only.
 
-For this project, ordinary browser requests to intentionally embedded third-party public assets are out of scope unless the application attaches user-specific secrets, identifiers, or sensitive page data to those requests. The current app only embeds static public image URLs and does not use those loads to transmit protected application data.
+Any third-party asset loading must be understood as a browser privacy tradeoff, not mistaken for a server-side data leak. For this project, ordinary browser requests to intentionally embedded third-party public assets are out of scope unless the application attaches user-specific secrets, identifiers, or sensitive page data to those requests.
 
 ### Denial of Service
 
-Because the deployment is public and unauthenticated, the main realistic risk is abusive traffic against the small set of quote endpoints or expensive server operations. Public endpoints must avoid unbounded work, large attacker-controlled payloads, or fan-out to fragile upstream services. Future dynamic or write-heavy endpoints would need explicit rate limiting and request-size controls.
+Because the deployment is public and unauthenticated, the main realistic risk is abusive traffic against the small set of quote endpoints or expensive server operations. **Known gap:** no rate limiting is applied to any public endpoint. `/api/quotes/count` issues a database `COUNT(*)` query on every call, and `/api/quotes/all` performs an in-memory join on every call. Repeated high-frequency requests could exhaust the Neon connection pool (configured at `max: 20`). Public endpoints must avoid unbounded work, large attacker-controlled payloads, or fan-out to fragile upstream services. Future dynamic or write-heavy endpoints would need explicit rate limiting and request-size controls.
 
 ### Elevation of Privilege
 
