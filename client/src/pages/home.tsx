@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { ThemeType, type DailyQuote } from "@shared/schema";
 import { themeBackgrounds } from "@shared/data";
@@ -46,6 +46,29 @@ const themeLabels: Record<ThemeType, string> = {
 export default function Home() {
   const [selectedTheme, setSelectedTheme] = useState<ThemeType>("leadership");
   const { theme } = useTheme();
+
+  const cycleTheme = useCallback((direction: "next" | "prev") => {
+    setSelectedTheme((current) => {
+      const idx = themes.indexOf(current);
+      const next = direction === "next"
+        ? (idx + 1) % themes.length
+        : (idx - 1 + themes.length) % themes.length;
+      return themes[next];
+    });
+  }, []);
+
+  const handlePanEnd = useCallback(
+    (_: PointerEvent, info: { offset: { x: number }; velocity: { x: number } }) => {
+      const swipeThreshold = 50;
+      const velocityThreshold = 300;
+      if (info.offset.x < -swipeThreshold || info.velocity.x < -velocityThreshold) {
+        cycleTheme("next");
+      } else if (info.offset.x > swipeThreshold || info.velocity.x > velocityThreshold) {
+        cycleTheme("prev");
+      }
+    },
+    [cycleTheme]
+  );
   const isDark = theme === "dark";
 
   const { data: quotes, isLoading } = useQuery<Record<ThemeType, DailyQuote>>({
@@ -54,7 +77,11 @@ export default function Home() {
 
   return (
     <TooltipProvider>
-    <div className="relative min-h-screen overflow-hidden">
+    <motion.div
+      className="relative min-h-screen overflow-hidden"
+      onPanEnd={handlePanEnd}
+      style={{ touchAction: "pan-y" }}
+    >
       <AnimatePresence mode="sync">
         <motion.div
           key={selectedTheme + "-bg"}
@@ -158,7 +185,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
     </TooltipProvider>
   );
 }
